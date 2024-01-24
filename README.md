@@ -7,4 +7,4 @@
 Invoke URL: `https://leetcode-api-65c9cfc6c683.herokuapp.com?username=<USERNAME>`
 
 #### GET:
-<img src="https://github.com/Javaro3/LeetCodeApi/blob/main/images/get.png" width="500">
+<img src="https://github.com/Javaro3/LeetCodeApi/blob/main/images/get.png" width="800">
