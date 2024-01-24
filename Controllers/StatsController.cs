@@ -16,7 +16,8 @@ public class StatsController : Controller
     {
         try{
             var model = _statsService.GetStats(username);
-            return View(model);
+            string svg = _statsService.ConvertModelToSvg(model);
+            return Content(svg, "image/svg+xml");
         }
         catch(ArgumentException e){
             return Content(e.Message);

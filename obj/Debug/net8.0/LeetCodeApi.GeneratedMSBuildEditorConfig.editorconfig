@@ -17,7 +17,3 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = D:\file\LeetCodeApi
 build_property._RazorSourceGeneratorDebug = 
-
-[D:/file/LeetCodeApi/Views/Stats/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3RhdHNcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
