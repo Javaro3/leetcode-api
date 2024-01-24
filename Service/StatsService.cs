@@ -48,7 +48,7 @@ public class StatsService {
                 
                 <text x='16' y='25' font-family='Helvetica' font-size='10px' fill='#807E7B' font-weight='bold'>{model.Username} (Rank: {model.Rank})</text>
                 
-                <circle r='60' cx='90' cy='105' fill='none' stroke='#807E7B' stroke-width='3px'></circle>
+                <circle r='60' cx='90' cy='105' fill='none' stroke='#E0DDD8' stroke-width='3px'></circle>
                 <circle r='60' cx='90' cy='105' fill='none' stroke='#FFA116' stroke-width='5px' stroke-linecap='round' stroke-dasharray='{circleRadius}, 377' transform='rotate(-90 90 105)' ></circle>
                 <text x='90' y='105' font-family='Helvetica' text-anchor='middle' font-size='30px' fill='#26262D' font-weight='bold' >{model.SolvedTotalCount}</text>
                 <text x='90' y='125' font-family='Helvetica' text-anchor='middle' font-size='15px' fill='#807E7B' font-weight='bold' >Solved</text>
