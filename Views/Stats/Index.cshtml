@@ -1,0 +1,44 @@
+@using LeetCodeApi.Models
+@model StatsModel
+@{
+    double circleRadius = 377 * (@Model.SolvedTotalCount*1f / @Model.TotalCount);
+    int easyLength = (int)(200 + (200 * (@Model.SolvedEasyCount*1.0 / @Model.EasyCount)));
+    int mediumLength = (int)(200 + (200 * (@Model.SolvedMediumCount*1.0 / @Model.MediumCount)));
+    int hardLength = (int)(200 + (200 * (@Model.SolvedHardCount*1.0 / @Model.HardCount)));
+}
+
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' 
+style='isolation: isolate' viewBox='0 0 410 186' width='410px' height='186px'>
+    <rect width='410px' height='186px' rx="10" ry="10" fill="#FFFFFF" style="stroke:#F7F8FA;stroke-width:3;opacity:1" />  
+    
+    <text x="16" y="25" font-family="Helvetica" font-size="10px" fill="#E0DDD8" font-weight="bold">@Model.Username (Rank: @Model.Rank)</text>
+    
+    <circle r="60" cx="90" cy="105" fill="none" stroke="#E0DDD8" stroke-width="3px"></circle>
+    <circle r="60" cx="90" cy="105" fill="none" stroke="#FFA116" stroke-width="5px" stroke-linecap="round" stroke-dasharray="@circleRadius, 377" transform="rotate(-90 90 105)" ></circle>
+    <text x="90" y="105" font-family="Helvetica" text-anchor="middle" font-size="30px" fill="#26262D" font-weight="bold" >@Model.SolvedTotalCount</text>
+    <text x="90" y="125" font-family="Helvetica" text-anchor="middle" font-size="15px" fill="#E0DDD8" font-weight="bold" >Solved</text>
+    
+    <text x="200" y="60" font-family="Helvetica" text-anchor="start" font-size="10px" fill="#E0DDD8">Easy</text>
+    <text x="250" y="60" font-family="Helvetica" text-anchor="start" font-size="10px" fill="#26262D" font-weight="bold">
+        @Model.SolvedEasyCount <tspan fill="#E0DDD8" font-size="8px" fill="#E0DDD8">/@Model.EasyCount</tspan>
+    </text>
+    <text x="350" y="60" font-family="Helvetica" text-anchor="start" font-size="8px" fill="#E0DDD8" font-weight="bold">Beats @Model.EasyBeatsPercentage%</text>
+    <line x1="200" y1="70" x2="400" y2="70" stroke="#E0F4E7" stroke-width="7" stroke-linecap="round" />
+    <line x1="200" y1="70" x2="@easyLength" y2="70" stroke="#00AF9B" stroke-width="7" stroke-linecap="round" />
+
+    <text x="200" y="100" font-family="Helvetica" text-anchor="start" font-size="10px" fill="#E0DDD8">Medium</text>
+    <text x="250" y="100" font-family="Helvetica" text-anchor="start" font-size="10px" fill="#26262D" font-weight="bold">
+        @Model.SolvedMediumCount <tspan fill="#E0DDD8" font-size="8px" fill="#E0DDD8">/@Model.MediumCount</tspan>
+    </text>
+    <text x="350" y="100" font-family="Helvetica" text-anchor="start" font-size="8px" fill="#E0DDD8" font-weight="bold">Beats @Model.MediumBeatsPercentage%</text>
+    <line x1="200" y1="110" x2="400" y2="110" stroke="#FFF4D9" stroke-width="7" stroke-linecap="round" />
+    <line x1="200" y1="110" x2="@mediumLength" y2="110" stroke="#FFB800" stroke-width="7" stroke-linecap="round" />
+
+    <text x="200" y="140" font-family="Helvetica" text-anchor="start" font-size="10px" fill="#E0DDD8">Hard</text>
+    <text x="250" y="140" font-family="Helvetica" text-anchor="start" font-size="10px" fill="#26262D" font-weight="bold">
+        @Model.SolvedHardCount <tspan fill="#E0DDD8" font-size="8px" fill="#E0DDD8">/@Model.HardCount</tspan>
+    </text>
+    <text x="350" y="140" font-family="Helvetica" text-anchor="start" font-size="8px" fill="#E0DDD8" font-weight="bold">Beats @Model.HardBeatsPercentage%</text>
+    <line x1="200" y1="150" x2="400" y2="150" stroke="#FDE4E3" stroke-width="7" stroke-linecap="round" />
+    <line x1="200" y1="150" x2="@hardLength" y2="150" stroke="#EF4743" stroke-width="7" stroke-linecap="round" />
+</svg>
